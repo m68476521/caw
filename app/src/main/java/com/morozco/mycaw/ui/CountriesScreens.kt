@@ -63,7 +63,7 @@ fun CountriesApp(
     )
 
     Scaffold(topBar = {
-        TopBar(currentScreen = currentScreen,
+        TopBar(currentScreen = stringResource(R.string.countries),
             canNavigateBack = navController.previousBackStackEntry != null,
             navigateUp = { navController.navigateUp() })
     }) { innerPadding ->
