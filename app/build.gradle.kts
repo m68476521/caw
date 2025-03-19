@@ -80,4 +80,8 @@ dependencies {
     // Serialization
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.serialization.metadata)
+
+    // Arrow
+    implementation(libs.arrow.core)
+    implementation(libs.arrow.coroutines)
 }
