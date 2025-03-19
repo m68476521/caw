@@ -5,6 +5,7 @@ import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -38,7 +39,9 @@ import androidx.compose.ui.unit.sp
 import com.morozco.mycaw.network.ItemResponse
 
 @Composable
-fun TitleLabel(text: String, fontSize: TextUnit = 16.sp, color: Color = Color.White) {
+fun TitleLabel(text: String, fontSize: TextUnit = 16.sp, color: Color ? = null) {
+    var color = color ?: if (isSystemInDarkTheme()) Color.White else Color.Black
+
     Text(
         modifier = Modifier
             .padding(8.dp)
