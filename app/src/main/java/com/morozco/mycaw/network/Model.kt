@@ -20,3 +20,11 @@ data class Language(
     val code: String? = null,
     val name: String? = null
 )
+
+//API Status
+enum class Status {
+    UNKNOWN,
+    IN_PROGRESS,
+    READY,
+    FAIL
+}
