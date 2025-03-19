@@ -40,14 +40,14 @@ import com.morozco.mycaw.network.ItemResponse
 
 @Composable
 fun TitleLabel(text: String, fontSize: TextUnit = 16.sp, color: Color ? = null) {
-    var color = color ?: if (isSystemInDarkTheme()) Color.White else Color.Black
+    var fontColor = color ?: if (isSystemInDarkTheme()) Color.White else Color.Black
 
     Text(
         modifier = Modifier
             .padding(8.dp)
             .wrapContentHeight(align = Alignment.CenterVertically),
         text = text,
-        color = color,
+        color = fontColor,
         fontSize = fontSize,
         maxLines = 1,
         overflow = TextOverflow.Ellipsis
