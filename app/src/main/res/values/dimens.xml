@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_rad">4dp</dimen>
+
+    <dimen name="margin_light">4dp</dimen>
+    <dimen name="margin_semi_light">6dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_medium_big">16dp</dimen>
+
+    <dimen name="max_width">180dp</dimen>
+</resources>

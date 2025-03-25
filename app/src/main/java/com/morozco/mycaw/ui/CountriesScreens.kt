@@ -18,14 +18,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.morozco.mycaw.R
 import com.morozco.mycaw.ui.home.homeViewerScreen
-import com.morozco.mycaw.viewModel.CountryViewModel
 import java.lang.String.valueOf
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,7 +50,6 @@ fun TopBar(
 
 @Composable
 fun CountriesApp(
-    viewModel: CountryViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ) {
     // Get current back stack entry
@@ -75,7 +72,7 @@ fun CountriesApp(
                 .verticalScroll(rememberScrollState())
                 .padding(innerPadding)
         ) {
-            homeViewerScreen(viewModel)
+            homeViewerScreen()
         }
     }
 }

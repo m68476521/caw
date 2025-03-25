@@ -19,6 +19,9 @@ kotlinx-serialization = "1.8.0"
 kotlinx-serialization-json = {ref = "kotlinx-serialization"}
 kotlinx-serialization-metadata = "0.9.0"
 arrow = "2.0.1"
+constraint-layout = "2.0.4"
+arch-navigation = "1.0.0"
+android-extension-version ="1.8.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -43,21 +46,33 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 retrofit-adapter-rxjava = { group = "com.squareup.retrofit2", name = "adapter-rxjava3", version.ref = "retrofit" }
 loggin-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "logging-interceptor" }
-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
+#hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
+#hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
 androidx-navigation-runtime-android = { group = "androidx.navigation", name = "navigation-runtime-android", version.ref = "navigationRuntimeAndroid" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
+androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationCompose" }
+androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationCompose" }
+arch-navigation-fragment = { group = "android.arch.navigation", name = "navigation-fragment-ktx", version.ref = "arch-navigation" }
+arch-navigation-ui = { group = "android.arch.navigation", name = "navigation-ui-ktx", version.ref = "arch-navigation" }
+androidx-constraint-layout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraint-layout" }
+
 kotlinx-serialization-metadata = { group = "org.jetbrains.kotlinx", name = "kotlinx-metadata-jvm", version.ref = "kotlinx-serialization-metadata" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-serialization-json" }
 arrow-core = { group = "io.arrow-kt", name = "arrow-core", version.ref = "arrow" }
 arrow-coroutines = { group = "io.arrow-kt", name = "arrow-fx-coroutines", version.ref = "arrow" }
+#amdroid-extensions = { group = "org.jetbrains.kotlin.android.extensions", name = "org.jetbrains.kotlin.android.extensions.gradle.plugin", version.ref = "android-extension-version" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin-kapt" }
-hilt-android = { id = "com.google.dagger.hilt.android", version.ref ="hiltVersion" }
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+#hilt-android = { id = "com.google.dagger.hilt.android", version.ref ="hiltVersion" }
+#ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinx-serialization" }
+#android-extension = { id = "kotlin-android-extensions", version.ref = "kotlinx-serialization" }
+#kotlin-android-extensions = { id = "org.jetbrains.kotlin.android", version.ref = "android-extension-version" }
+
 
