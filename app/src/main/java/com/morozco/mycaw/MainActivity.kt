@@ -1,24 +1,37 @@
 package com.morozco.mycaw
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import com.morozco.mycaw.ui.CountriesApp
-import com.morozco.mycaw.ui.theme.MyCawTheme
-import dagger.hilt.android.AndroidEntryPoint
+import android.view.View
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
+import com.morozco.mycaw.databinding.ActivityMainBinding
+import com.morozco.mycaw.network.ApiManager
+import com.morozco.mycaw.network.Status
+import com.morozco.mycaw.viewModel.CountryViewModel
+import kotlinx.coroutines.launch
 
-@AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+    private val model by viewModels<CountryViewModel>()
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        ApiManager.createApi()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setContent {
-            MyCawTheme {
-                CountriesApp()
-            }
+        lifecycleScope.launch {
+            model.isLoading.flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)
+                .collect { status ->
+                    if (status == Status.IN_PROGRESS) {
+                        binding.progressLoader.visibility = View.VISIBLE
+                    } else {
+                        binding.progressLoader.visibility = View.GONE
+                    }
+                }
         }
     }
 }
